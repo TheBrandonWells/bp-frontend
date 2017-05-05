@@ -2,6 +2,7 @@
   width: 70%;
   display: flex;
   margin: 20px auto 0;
+  flex-wrap: wrap;
 
   input {
     flex: 1 1 40%;
@@ -23,12 +24,18 @@
     flex: 1 1 10%;
     font-weight: 300;
 
-    &:disabled {
-      background: rgba(0, 0, 0, 0.3);
-    }
     &:hover {
       background-color: #088ae8;
       cursor: pointer;
+    }
+
+    &:disabled {
+      background: rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        cursor: default;
+        background: rgba(0, 0, 0, 0.3);
+      }
     }
   }
 }

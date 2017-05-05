@@ -1,8 +1,16 @@
 import axios from "axios";
-import { API_URL } from '../constants';
+import { API_URL,
+         API_KEY,
+         STORY_DELETED,
+         STORY_DELETE_REJECTED,
+         STORY_UPDATED,
+         STORY_UPDATE_REJECTED,
+         STORY_ADDED,
+         STORY_ADD_REJECTED
+        } from '../constants/constants';
 
 const config = {
-  headers: {'authorization': 'aa6093641373fffe574094e5c9469a21'}
+  headers: {'authorization': API_KEY}
 };
 
 
@@ -26,11 +34,11 @@ export function deleteItem(id){
     axios.delete(API_URL + '/' + id, config)
     .then((response) =>{
       console.log(response)
-      dispatch({type: 'STORY_DELETED', id: id});
+      dispatch({type: STORY_DELETED, id: id});
     })
     .catch((err) => {
       console.log(err)
-      dispatch({type: 'STORY_DELETE_REJECTED', payload: err})
+      dispatch({type: STORY_DELETE_REJECTED, payload: err})
     })
   }
 }
@@ -49,11 +57,11 @@ export function updateItem(id, title, url){
     axios.put(API_URL + '/' + id, dataObject, config)
     .then((response) =>{
       console.log(response)
-      dispatch({type: 'STORY_UPDATED', id: id, payload: response.data.data});
+      dispatch({type: STORY_UPDATED, id: id, payload: response.data.data});
     })
     .catch((err) => {
       console.log(err)
-      dispatch({type: 'STORY_UPDATE_REJECTED', payload: err})
+      dispatch({type: STORY_UPDATE_REJECTED, payload: err})
     })
   }
 }
@@ -73,11 +81,11 @@ export function addItem(title, url){
     axios.post(API_URL, dataObject, config)
     .then((response) =>{
       console.log(response)
-      dispatch({type: 'STORY_ADDED', payload: response.data.data});
+      dispatch({type: STORY_ADDED, payload: response.data.data});
     })
     .catch((err) => {
       console.log(err)
-      dispatch({type: 'STORY_ADD_REJECTED', payload: err})
+      dispatch({type: STORY_ADD_REJECTED, payload: err})
     })
   }
 }

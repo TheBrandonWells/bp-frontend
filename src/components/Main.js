@@ -29,7 +29,8 @@ const Main = class Main extends Component{
         </a>
         </nav>
         <header>
-          <p>Bigger Pockets Frontend Exercise done by Brandon Wells May, 2017.<br />If you have any questions feel free to email me at Brandon@brandonRwells.com</p>
+          <p>Bigger Pockets Frontend Exercise done by Brandon Wells May, 2017.</p>
+          <p>If you have any questions feel free to email me at Brandon@brandonRwells.com</p>
         </header>
         <ItemForm {...this.props}/>
         <ItemList items={this.props.items}{...this.props}/>

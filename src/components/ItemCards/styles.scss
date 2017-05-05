@@ -27,6 +27,7 @@
     border: 1px solid rgba(0,0,0,.3);
     border-radius: 4px;
     background-color: #fff;
+    flex-grow: 1;
 
     &.featured {
       background-color: #87cefa;
@@ -63,13 +64,7 @@
         top: 80%;
         max-width:300px;
         background: #777;
-        -webkit-box-shadow: 0 15px 10px #777;
-        -moz-box-shadow: 0 15px 10px #777;
         box-shadow: 0 15px 10px #777;
-        -webkit-transform: rotate(-3deg);
-        -moz-transform: rotate(-3deg);
-        -o-transform: rotate(-3deg);
-        -ms-transform: rotate(-3deg);
         transform: rotate(-3deg);
       }
 
@@ -87,6 +82,7 @@
     margin: 0;
     padding: 10px;
     text-align: left;
+    font-size: 14px;
   }
 
   form {
@@ -119,8 +115,9 @@ span {
 .itemCards form.editForm {
   input {
     margin-left: 10px;
+    width: 75%;
   }
-  
+
   button {
     border: 0;
     color: #1d96f4;
