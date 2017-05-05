@@ -1,6 +1,7 @@
 body {
   background-color: #F4F4F4;
-  font-family: "Neue Helvetica W01", sans-serif;
+  font-family: "Neue Helvetica W01", Helvetica, Arial, Lucida, sans-serif;
+  margin: 0;
 }
 
 a {
@@ -12,4 +13,15 @@ nav {
   background-color: rgba(52, 65, 77, 0.99);
   text-align: center;
   padding-top: 30px;
+}
+
+header {
+  margin: 40px 0;
+
+  p {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+  }
 }

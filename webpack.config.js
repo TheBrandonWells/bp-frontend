@@ -18,7 +18,7 @@ loaders.push({
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './src/app.js', // your app's entry point
+    './src/app.js', // app's entry point
   ],
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
   output: {
@@ -40,7 +40,6 @@ module.exports = {
     hot: true,
     // embed the webpack-dev-server runtime into the bundle
     inline: true,
-    // serve index.html in place of 404 responses to allow HTML5 history
     historyApiFallback: true,
     port: PORT,
     host: HOST

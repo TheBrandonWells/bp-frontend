@@ -1,18 +1,129 @@
-h1 {
-  font-weight: normal; 
+.listingsContainer {
+  margin: 0 auto;
+  width: 70%;
+
+  h2 {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+}
+
+.none {
+  font-size: 12px;
+  margin: 40px 10px;
 }
 
 .itemCards {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-  width: 600px;
+  padding: 0;
 
   li {
+    position: relative;
     flex: 0 1 calc(50% - 10px);
     margin: 4px;
     border: 1px solid rgba(0,0,0,.3);
     border-radius: 4px;
     background-color: #fff;
+
+    &.featured {
+      background-color: #87cefa;
+      border-color: #fff;
+    }
+
+    .itemTools {
+      position: absolute;
+      display: none;
+      right: 10px;
+      top: 5px;
+
+      i {
+        color: #1d96f4;
+        margin-left: 5px;
+        background: transparent;
+        border: 0;
+
+        &:hover {
+          color: #999;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &:hover {
+      &:before, &:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+      }
+
+      .itemTools {
+        display: block;
+      }
+    }
+  }
+
+  .cardHeader {
+    font-size: 20px;
+  }
+
+  p {
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+  }
+
+  form {
+    input {
+      width: 80%;
+      border: 0;
+      margin: 10px 0;
+      height: 18px;
+      font-size: 14px;
+      padding: 0;
+      display: block;
+      background: #eee;
+      padding: 5px;
+    }
+  }
+}
+
+span {
+  font-size: 11px;
+  display: block;
+
+  i {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #87CEFA;
+  }
+}
+
+.itemCards form.editForm {
+  input {
+    margin-left: 10px;
+  }
+  
+  button {
+    border: 0;
+    color: #1d96f4;
+    background: transparent;
   }
 }

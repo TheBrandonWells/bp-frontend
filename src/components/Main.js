@@ -1,9 +1,10 @@
 import React, {PropTypes, Component } from "react";
 
 import { connect } from "react-redux";
+import ItemForm from './ItemForm/ItemForm.js'
 import ItemList from './ItemCards/ItemList.js'
 
-import {fetchItems} from "../actions/itemActions.js"
+import * as Actions from "../actions/itemActions.js"
 import './styles.scss';
 
 
@@ -14,12 +15,7 @@ const Main = class Main extends Component{
 
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(fetchItems())
-  }
-
-  componentDidMount(){
-      const { dispatch } = this.props
-      dispatch(fetchItems());
+    dispatch(Actions.fetchItems())
   }
 
   render(){
@@ -32,7 +28,11 @@ const Main = class Main extends Component{
           </object>
         </a>
         </nav>
-        <ItemList items={this.props.items}/>
+        <header>
+          <p>Bigger Pockets Frontend Exercise done by Brandon Wells May, 2017.<br />If you have any questions feel free to email me at Brandon@brandonRwells.com</p>
+        </header>
+        <ItemForm {...this.props}/>
+        <ItemList items={this.props.items}{...this.props}/>
       </div>
     )
   }
