@@ -1,0 +1,18 @@
+h1 {
+  font-weight: normal; 
+}
+
+.itemCards {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  width: 600px;
+
+  li {
+    flex: 0 1 calc(50% - 10px);
+    margin: 4px;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 4px;
+    background-color: #fff;
+  }
+}
