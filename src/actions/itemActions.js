@@ -6,7 +6,9 @@ import { API_URL,
          STORY_UPDATED,
          STORY_UPDATE_REJECTED,
          STORY_ADDED,
-         STORY_ADD_REJECTED
+         STORY_ADD_REJECTED,
+         FETCH_STORIES_FULFILLED,
+         FETCH_STORIES_REJECTED
         } from '../constants/constants';
 
 const config = {
@@ -19,11 +21,11 @@ export function fetchItems(){
   return function(dispatch){
     axios.get(API_URL, config)
     .then((response) =>{
-      dispatch({type: 'FETCH_STORIES_FULFILLED', payload: response.data.data});
+      dispatch({type: FETCH_STORIES_FULFILLED, payload: response.data.data});
     })
     .catch((err) => {
       console.log(err)
-      dispatch({type: 'FETCH_STORIES_REJECTED', payload: err})
+      dispatch({type: FETCH_STORIES_REJECTED, payload: err})
     })
   }
 }
